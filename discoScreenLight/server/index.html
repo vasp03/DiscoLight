@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-time Text File Update</title>
+  </head>
+  <body>
+    <div id="data"></div>
+    <script>
+        var ws = new WebSocket("ws://127.0.0.1:5000/");
+        ws.onmessage = function(event) {
+            var data = JSON.parse(event.data);
+            document.getElementById("data").innerHTML = data.data;
+        }
+    </script>
+  </body>
+</html>
