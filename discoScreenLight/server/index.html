@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Real-time Text File Update</title>
+    <title id="data"></title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div id="data"></div>
-    <script>
-        var ws = new WebSocket("ws://127.0.0.1:5000/");
-        ws.onmessage = function(event) {
-            var data = JSON.parse(event.data);
-            document.getElementById("data").innerHTML = data.data;
-        }
-    </script>
+    <div class="container">
+      <div class="square left">
+          <div id="data2">Hello</div>
+      </div>
+      <div class="square middle">
+
+      </div>
+      <div class="square right">
+        <iframe src="styles/a.html" seamless></iframe>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

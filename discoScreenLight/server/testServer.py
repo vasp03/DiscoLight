@@ -2,8 +2,10 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from aiohttp import web, WSCloseCode
 import asyncio
+import os
+import webbrowser
 
-path = "C:/Users/vikto/Documents/codes/disco/discoScreenLight/server/"
+path = os.getcwd()
 
 class FileChangedHandler(FileSystemEventHandler):
     print("FileChangedHandler")
@@ -48,4 +50,5 @@ def main():
     observer.schedule(fileChangedHandler, path='.', recursive=False)
     observer.start()
     web.run_app(app, host='127.0.0.1', port=5000)
+    
 

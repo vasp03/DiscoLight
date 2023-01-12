@@ -1,9 +1,10 @@
 import socket
 import tkinter as tk
 import threading
+import os
 import testServer
 
-path = "C:/Users/vikto/Documents/codes/disco/discoScreenLight/server/"
+path = os.getcwd()
 
 global server_thread, web_thread, s, connection_var
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -44,7 +45,7 @@ def on_message_recived():
 
         connection_var.set(data.decode())
 
-        with open('discoScreenLight/server/pageData.txt', 'w') as f:
+        with open(path+'pageData.txt', 'w') as f:
             f.write(data.decode())
             
         if (data.decode() == "stop"):
