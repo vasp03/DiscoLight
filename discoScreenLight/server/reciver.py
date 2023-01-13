@@ -45,7 +45,7 @@ def on_message_recived():
 
         connection_var.set(data.decode())
 
-        with open(path+'pageData.txt', 'w') as f:
+        with open(path+'/pageData.txt', 'w') as f:
             f.write(data.decode())
             
         if (data.decode() == "stop"):

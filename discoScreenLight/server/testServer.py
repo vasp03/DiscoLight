@@ -14,8 +14,8 @@ class FileChangedHandler(FileSystemEventHandler):
 
     async def on_modified(self, event):
         print("on_modified")
-        if event.src_path == path+'pageData.txt':
-            with open(path+'pageData.txt', 'r') as f:
+        if event.src_path == path+'/pageData.txt':
+            with open(path+'/pageData.txt', 'r') as f:
                 self.data = f.read()
                 for ws in ws_list:
                     await ws.send_json({'data': self.data})
@@ -26,7 +26,7 @@ async def handle(request):
 
     async def monitor_file():
         while True:
-            with open(path+'pageData.txt', 'r') as f:
+            with open(path+'/pageData.txt', 'r') as f:
                 data = f.read()
                 await ws.send_json({'data': data})
             await asyncio.sleep(1)
