@@ -1,10 +1,10 @@
 body {
-    background-color: #0e0e0e;
+    background-color: #000000;
 }
 
 html,
 body {
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
 }
 
@@ -47,7 +47,7 @@ div {
     --neonblue: #00eeff;
 }
 
-iframe{
-    height: calc(100vh - 20px);
+.sqr{
+    min-height: calc(100vh - 20px);
     border-width: 0px;
 }
